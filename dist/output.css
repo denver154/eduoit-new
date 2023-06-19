@@ -569,8 +569,8 @@ video {
   justify-content: center;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
 }
 
 .header-mob__wrapper {
@@ -1093,7 +1093,7 @@ video {
 }
 
 .banner__item {
-  height: 50rem;
+  height: 42rem;
   background-image: url("./edupit-img/banner-bg.jpg");
   background-size: cover;
   background-position: center;
@@ -2858,6 +2858,10 @@ video {
   }
 }
 
+.block {
+  display: block;
+}
+
 .text-right {
   text-align: right;
 }
@@ -3149,4 +3153,35 @@ body {
 .testimony .tns-controls button:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(24 64 107 / var(--tw-bg-opacity));
+}
+
+/* ------------------- scroll to top speed------------------- */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #0EB582;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #0EB582;
+}
+
+html {
+  scroll-behavior: smooth
 }
