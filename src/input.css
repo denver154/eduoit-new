@@ -1,0 +1,1037 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.container{
+    @apply relative max-w-[80rem] mx-auto p-[1rem]
+}
+
+body{
+    @apply font-Raleway
+}
+
+.bg-clip-text {
+    -webkit-text-stroke-color: #ffffff;
+    -webkit-text-stroke-width: 3px;
+}
+
+.banner .tns-outer{
+    @apply relative
+}
+
+.banner .tns-controls{
+    @apply absolute top-[50%] left-0 right-0 max-w-[120rem] z-[10] mx-auto flex justify-between
+}
+
+.banner .tns-controls button{
+    @apply bg-primary hover:bg-dark transition ease-in-out duration-300 p-[.8rem] rounded-full text-[1.5rem] flex items-center text-light
+}
+
+.feature .tns-controls{
+    @apply absolute top-[50%] right-0 left-0 flex items-center justify-between z-[10]  mx-auto
+}
+
+.feature .tns-controls button{
+    @apply text-[1.5rem] hover:bg-dark transition ease-in-out duration-300 text-light bg-primary rounded-full px-[1.2rem] py-[.7rem] max-w-[100rem]
+}
+
+.feature .tns-outer{
+    @apply lg:translate-y-[-12rem] relative
+}
+
+.instructor .tns-controls{
+    @apply absolute top-[20%] right-[10%] max-w-[6rem] left-0 ml-auto flex justify-between
+}
+
+.instructor .tns-controls button{
+    @apply bg-primary hover:bg-dark transition ease-in-out duration-300 rounded-full px-[.7rem] py-[.6rem] text-light text-[1.5rem] flex items-center
+}
+
+.news .tns-controls{
+    @apply absolute top-[15%] right-[10%] max-w-[6rem] left-0 ml-auto flex justify-between
+}
+
+.news .tns-controls button{
+    @apply bg-primary hover:bg-dark transition ease-in-out duration-300 rounded-full px-[.7rem] py-[.6rem] text-light text-[1.5rem] flex items-center
+}
+
+.testimony .tns-controls{
+    @apply absolute bottom-0 right-[20%] max-w-[6rem] left-[30%] mx-auto flex justify-between
+}
+
+.testimony .tns-controls button{
+    @apply bg-primary hover:bg-dark transition ease-in-out duration-300 rounded-full px-[.7rem] py-[.6rem] text-light text-[1.5rem] flex items-center
+}
+
+@layer utilities{
+    .btn{
+        @apply inline-block py-[.8rem] px-[1.5rem] border-transparent
+    }
+
+    .green{
+        @apply text-[1.2rem] bg-primary rounded-[.3rem] hover:bg-dark transition ease-in-out duration-300 font-[600]
+    }
+
+    .shallow-green{
+        @apply text-primary text-[1.2rem] bg-transparent rounded-[.3rem] border-[1px] border-primary hover:bg-primary hover:text-light transition ease-in-out duration-300 font-[600]
+    }
+
+    .shallow-white{
+        @apply text-[1rem] bg-transparent border-[1px] border-grey rounded-[.3rem] text-dark hover:text-light hover:bg-primary hover:border-primary transition ease-in-out duration-300
+    }
+}
+
+@layer components{
+
+    /** ---------- MOBILE HEADER ---------- */
+
+    .header-mob{
+        @apply lg:hidden
+    }
+
+    .branding{
+        @apply bg-light flex justify-center py-[1rem]
+    }
+
+    .header-mob__wrapper{
+        @apply relative bg-primary
+    }
+
+    .header-mob__content{
+        @apply flex items-center justify-between
+    }
+
+    .header-mob__text{
+        @apply text-light text-[1.2rem] font-[600]
+    }
+
+    .header-mob__nav{
+        @apply max-h-0 overflow-hidden
+    }
+
+    .header-mob__nav.open{
+        @apply max-h-fit
+    }
+
+    .header-mob__nav ul li.first-drop{
+        @apply border-t-[1px] cursor-pointer
+    }
+
+    .header-mob__nav ul li.first-drop h4{
+        @apply flex items-center justify-between px-[1rem] py-[.9rem]
+    }
+
+    .header-mob__nav ul li.first-drop:hover h4 i{
+        @apply text-primary
+    }
+
+    .header-mob__nav ul li.first-drop h4 span{
+        @apply text-[.8rem] font-[700] text-dgrey
+    }
+
+    .header-mob__nav .icon span:first-child{
+        @apply block bg-black translate-y-[.1rem] w-[.8rem] h-[.1rem] transition ease-linear duration-300
+    }
+
+    .header-mob__nav .icon span:last-child{
+        @apply block mt-0 w-[.8rem] h-[.1rem] bg-black rotate-[90deg] transition ease-linear duration-300
+    }
+
+    .header-mob__nav h4:hover .icon span{ 
+        @apply bg-primary
+    }
+
+    .header-mob__nav .icon.open{
+        @apply z-[20] transition ease-linear duration-300
+    }
+
+    .header-mob__nav .icon.open span:last-child{
+        @apply rotate-[180deg] transition ease-linear duration-300
+    }
+
+    .header-mob__nav ul li ul{
+        @apply max-h-0 overflow-hidden
+    }
+
+    .header-mob__nav ul li ul.open{
+        @apply max-h-fit
+    }
+
+    .header-mob__nav ul li ul.second-drop li{
+        @apply py-[.5rem] border-t-[1px]
+    }
+
+    .header-mob__nav ul li ul.third-drop li{
+        @apply py-[.5rem]
+    }
+
+    .header-mob__nav ul li ul.second-drop li:hover{
+        @apply bg-dgrey bg-opacity-5 text-primary transition ease-in-out duration-300
+    }
+
+    .header-mob__nav ul li:nth-child(4) ul.second-drop li:nth-child(2):hover, .header-mob__nav ul li:nth-child(4) ul.second-drop li:nth-child(3):hover, .header-mob__nav ul li:nth-child(4) ul.second-drop li:nth-child(4):hover, .header-mob__nav ul li:nth-child(4) ul.second-drop li:nth-child(5):hover, .header-mob__nav ul li:nth-child(4) ul.second-drop li:nth-child(10):hover{
+        @apply bg-light bg-opacity-5 text-primary transition ease-in-out duration-300
+    }
+
+    .header-mob__nav ul li ul.second-drop li a{
+        @apply text-[.8rem] px-[2rem] flex
+    }
+
+    .header-mob__nav ul li ul.second-drop li h4{
+        @apply text-[.8rem] py-0 flex items-center justify-between pl-[2rem]
+    }
+
+    .header-mob__nav ul li ul.second-drop li h4 span{
+        @apply font-[400] text-black 
+    }
+
+    .header-mob__nav ul li:hover ul.second-drop li ul li a{
+        @apply text-black
+    }
+
+    .header-mob__nav ul li ul li ul li a{
+        @apply text-[.8rem] px-[4rem] flex hover:text-primary
+    }
+
+    .header-mob__nav ul li ul li:hover ul.third-drop li{
+        @apply  bg-light
+    }
+
+    .header-mob__nav ul li ul li ul.third-drop li:hover{
+        @apply  bg-dgrey bg-opacity-5 text-primary transition ease-in-out duration-300
+    }
+
+    .toggle__menu.open span{
+        @apply z-10 bg-light
+    }
+
+    .toggle__menu span{
+        @apply w-[1.5rem] h-[.15rem] bg-light block transition ease-in-out duration-500
+    }
+
+    .toggle__menu span:nth-child(2){
+        @apply my-[.3rem]
+    }
+
+    .toggle__menu.open span:first-child{
+        @apply translate-y-[5px] rotate-[-230deg] transition ease-in-out duration-500;
+    }
+
+    .toggle__menu.open span:nth-child(2){
+        @apply opacity-0 transition ease-in-out duration-500;
+    }
+
+    .toggle__menu.open span:last-child{
+        @apply translate-y-[-9px] rotate-[230deg] transition ease-in-out duration-500;
+    }
+
+
+    /** ---------- DESKTOP HEADER ---------- */
+
+    .header{
+        @apply hidden lg:block
+    }
+
+    .header1{
+        @apply bg-primary
+    }
+
+    .header1 .container{
+        @apply max-w-[100rem] mx-auto
+    }
+
+    .header1__wrapper{
+        @apply font-[600] grid grid-cols-[_3fr_1fr_1fr] items-center justify-between
+    }
+
+    .header1__text{
+        @apply text-light gap-x-[1rem] flex items-center 
+    }
+
+    .header1__social ul{
+        @apply text-light flex gap-x-[1rem] items-center justify-center
+    }
+
+    .header1__social a{
+        @apply hover:text-black
+    }
+
+    .header1__key ul{
+        @apply text-light flex gap-x-[1rem] items-center justify-center
+    }
+
+    .header1__key ul li i{
+        @apply mr-[.5rem]
+    }
+
+    .header1__key ul li:last-child{
+        @apply border-l-[3px] border-light pl-[1rem]
+    }
+
+
+    .header2{
+        @apply z-[999] fixed bg-lblue p-[.5rem] max-w-[80rem] mx-auto left-0 right-0 top-[8rem] rounded-[.5rem] transition-all duration-500
+    }
+
+    .fix{
+        @apply top-0 transition-all duration-500
+    }
+
+    .header2__wrapper{
+        @apply grid grid-cols-[2fr_3.5fr] gap-x-[1rem] items-center justify-between
+    }
+
+    .header2__nav{
+        @apply relative flex items-center text-light
+    }
+
+    .header2__nav ul.first-drop{
+        @apply flex gap-x-[1.5rem] relative
+    }
+
+    .header2__nav ul.first-drop li{
+        @apply py-[1rem]
+    }
+
+    .header2__nav ul.first-drop li a{
+        @apply flex items-center
+    }
+
+    .header2__nav ul.first-drop li a i{
+        @apply text-[.5rem] ml-[.5rem]
+    }
+
+    .header2__nav ul.second-drop{
+        @apply absolute top-[3.5rem] bg-primary lg:hidden
+    }
+
+    .header2__nav ul li:hover ul.second-drop{
+        @apply min-w-[13rem] block  
+    }
+
+    .header2__nav ul.second-drop li a{
+        @apply px-[1rem]
+    }
+
+    .header2__nav ul.second-drop li:hover{
+        @apply bg-light text-primary relative
+    }
+
+    .header2__nav ul.third-drop{
+        @apply absolute top-0 left-[13rem] bg-primary lg:hidden
+    }
+
+    .header2__nav ul.second-drop li:hover ul.third-drop{
+        @apply min-w-[10rem] block shadow-[0px_1px_3px_rgba(0,0,0,.3)]
+    }
+
+    .header2__nav ul.third-drop li a{
+        @apply text-light
+    }
+
+    .header2__nav ul.third-drop li:hover a{
+        @apply text-primary
+    }
+
+    .header2__nav ul.fourth-drop{
+        @apply absolute top-0 left-[10rem] bg-primary lg:hidden
+    }
+
+    .header2__nav ul.third-drop li:hover ul.fourth-drop{
+        @apply min-w-[15rem] block shadow-[0px_1px_3px_rgba(0,0,0,.3)]
+    }
+
+    .header2__nav ul.third-drop li:hover ul.fourth-drop li a{
+        @apply text-light
+    }
+
+    .header2__nav ul.third-drop li:hover ul.fourth-drop li:hover a{
+        @apply text-primary
+    }
+
+    .header2__btn{
+        @apply text-light ml-[2rem]
+    }
+
+
+    /** ---------- BANNER ---------- */
+
+    .banner .container{
+        @apply max-w-[100rem]
+    }
+    
+    .banner__item{
+        @apply py-[10rem] bg-banner-bg bg-no-repeat bg-center bg-cover h-[50rem] lg:h-[60rem] lg:pt-[15rem] lg:flex lg:items-center
+    }
+
+    .banner__content{
+        @apply lg:flex lg:flex-row lg:items-center lg:justify-between
+    }
+
+    .banner__img{
+        @apply hidden lg:block
+    }
+    
+    .banner__img img{
+        @apply w-[30rem]
+    }
+
+    .banner__text{
+        @apply relative
+    }
+
+    .banner__text h2{
+        @apply text-light text-[2rem] font-[600] text-center px-[2rem] lg:text-[4rem] lg:text-left lg:px-0 lg:w-[50rem]
+    }
+
+    .banner__text p{
+        @apply text-light font-medium text-[1.5rem] px-[1rem] text-center mt-[1rem] lg:px-0 lg:text-[1.5rem] lg:text-left lg:w-[45rem]
+    }
+
+    .banner__text p span{
+        @apply block lg:flex
+    }
+
+    .banner__btn{
+        @apply flex justify-center items-center gap-x-[.5rem] mt-[3rem] text-light lg:justify-start
+    }
+
+    .banner__bg-text{
+        @apply absolute bg-clip-text text-transparent text-[3.5rem] left-0 top-[-2rem] opacity-[.07] lg:text-[7rem]
+    }
+
+
+
+    /** ---------- FEATURE BANNER ---------- */
+
+    .feature{
+        @apply relative p-[1rem] max-w-[80rem] mx-auto lg:max-h-[15rem]
+    }
+
+    .feature__wrapper{
+        @apply flex gap-x-[1rem]
+    }
+
+    .feature__card{
+        @apply flex rounded-[1rem] bg-light border-[2px] border-lgreen w-fit hover:shadow-[0px_0px_50px_0px_rgba(0,0,0,.09)] mb-[.5rem] mx-auto max-w-[45rem] min-h-[18rem] transition ease-in-out duration-300 lg:max-w-[15rem] lg:min-h-[15rem]
+    }
+
+    .feature__content{
+        @apply flex flex-col items-center text-center justify-center min-h-[18rem] lg:min-h-[15rem]
+    }
+
+    .feature__content img{
+        @apply mb-[1rem]
+    }
+
+    .feature__text a{
+        @apply text-[1.5rem] font-[600] text-dark hover:text-primary transition ease-in-out duration-300
+    }
+
+    .feature__text p{
+        @apply text-[1.1rem] font-[500] text-primary cursor-default
+    }
+
+
+
+    /** ---------- ABOUT BANNER ---------- */
+
+    .about{
+        @apply py-[2rem]
+    }
+
+    .about .container{
+        @apply max-w-[100rem] mx-auto
+    }
+
+    .about__wrapper{
+        @apply lg:flex lg:gap-x-[5rem]
+    }
+
+    .about__title{
+        @apply my-[2rem]
+    }
+
+    .about__title h3{
+        @apply text-[1.5rem] text-primary font-[800] lg:text-[1rem]
+    }
+
+    .about__title h4{
+        @apply text-[1.5rem] text-dark font-[800] lg:text-[3rem]
+    }
+
+    .about__title p{
+        @apply text-grey text-[1.2rem] lg:w-[37rem]
+    }
+
+    .about__text{
+        @apply my-[1.5rem] border-l-[3px] border-primary pl-[.5rem] pb-[1rem] text-grey
+    }
+
+    .about__text h5{
+        @apply text-[1.3rem] lg:w-[40rem] lg:text-[1.5rem]
+    }
+
+    .about__img img{
+        @apply lg:max-w-[70rem]
+    }
+
+    .about__slider h4{
+        @apply text-[1.5rem] font-[700] mb-[1rem] text-dark lg:text-[1.7rem]
+    }
+
+    .about__circle{
+        @apply relative h-[3px] w-[90px] bg-primary rounded-[30px]
+    }
+
+    .about__circle:before{
+        @apply content-[''] absolute left-0 top-[50%] translate-y-[-50%] border-[6px] border-primary rounded-full animate-sliding1
+    }
+
+    .about__circle:after{
+        @apply content-[''] absolute right-0 top-[50%] translate-y-[-50%] border-[6px] border-primary rounded-full animate-sliding2
+    }
+
+    .about__slider-wrapper{
+        @apply flex items-center justify-between gap-x-[1rem] mt-[2rem] mx-auto
+    }
+
+    .about__slider-wrapper img{
+        @apply max-w-[4rem] mr-auto
+    }
+
+
+
+    /** ---------- COURSE BANNER ---------- */
+
+    .course{
+        @apply bg-course-bg min-h-[50rem] bg-cover bg-center py-[7rem] lg:min-h-[80rem]
+    }
+
+    .course .container{
+        @apply lg:max-w-[80rem]
+    }
+
+    .course__title{
+        @apply flex flex-col items-center text-center font-[700] text-[1.6rem] text-primary pb-[3rem] lg:text-[1rem]
+    }
+
+    .course__title h4{
+        @apply text-dark px-[3rem] text-[1.6rem] lg:text-[3rem] lg:w-[50rem]
+    }
+
+    .course__wrapper{
+        @apply lg:grid lg:grid-cols-3 lg:gap-[2rem] 
+    }
+
+    .course__card:hover{
+        @apply translate-y-[-.5rem]
+    }
+
+    .course__card:hover .course__img-content ul{
+        @apply translate-y-[.5rem] transition-all duration-500
+    }
+
+    .course__card{
+        @apply bg-light shadow-[0_4px_23px_rgba(0,0,0,.1)] rounded-b-[.5rem] mb-[1.5rem] transition-all duration-500
+    }
+
+    .course__img{
+        @apply relative
+    }
+
+    .course__img-content ul{
+        @apply absolute top-0 p-[1rem] w-[28.2rem] mx-auto lg:w-[25rem] flex justify-between items-center transition-all duration-500
+    }
+
+    .course__img-content ul li:first-child{
+        @apply bg-primary px-[.7rem] py-[.3rem] rounded-[.3rem]
+    }
+
+    .course__img-content ul li:first-child {
+        @apply text-light text-[1.1rem]
+    }
+
+    .course__img-content ul li:last-child{
+        @apply bg-light px-[.6rem] py-[.2rem] rounded-[.2rem]
+    }
+
+    .course__img-content ul li:last-child a{
+        @apply text-primary text-[1.5rem]
+    }
+
+    .course__content{
+        @apply py-[1rem]
+    }
+
+    .course__text{
+        @apply p-[1rem]
+    }
+
+    .course__text ul li{
+        @apply flex items-center text-[1.1rem] text-grey
+    }
+
+    .course__text ul li span{
+        @apply italic ml-[.2rem]
+    }
+
+    .course__text ul li i{
+        @apply text-[.8rem] mr-[.3rem] text-primary
+    }
+
+    .course__text ul li a{
+        @apply mx-[.2rem] text-dblue font-[600]
+    }
+
+    .course__text ul li:nth-child(2){
+        @apply my-[1rem] pr-[2rem]
+    }
+
+    .course__text ul li:nth-child(2) a{
+        @apply text-dark font-[600] hover:text-primary transition ease-in-out duration-300 lg:text-[1.5rem]
+    }
+
+    .course__text ul li img{
+        @apply w-[2rem] rounded-full mr-[.5rem]
+    }
+
+    .course__subtext{
+        @apply border-t-[1px] p-[1rem] flex items-center justify-between
+    }
+
+    .course__subtext p{
+        @apply text-dark text-[1.1rem] font-[600]
+    }
+
+    .course__subtext a{
+        @apply text-[1.1rem]
+    }
+
+
+    /** ---------- INSTRUCTOR BANNER ---------- */
+
+    .instructor{
+        @apply relative py-[1rem]
+    }
+
+    .instructor__title{
+        @apply font-[700] text-[1.6rem] text-primary pb-[2rem] lg:text-[1rem]
+    }
+
+    .instructor__title h4{
+        @apply text-dark w-[17rem] lg:text-[3rem] lg:w-[30rem]
+    }
+
+    .instructor__wrapper{
+        @apply flex gap-x-[2rem]
+    }
+
+    .instructor__card{
+        @apply text-center bg-light border-[2px] border-lgreen rounded-[.5rem] py-[3rem] shadow-[0px_5px_4px_0px_rgba(0,0,0,.05)] overflow-hidden mb-[.5rem] px-[.5rem] transition-all duration-500
+    }
+
+    .instructor__card:hover{
+        @apply  border-light transition-all duration-500
+    }
+
+    .instructor__card:hover .instructor__social:before{
+        @apply w-[100%] bg-primary transition-all duration-300
+    }
+
+    .instructor__content{
+        @apply mb-[1rem] flex flex-col items-center
+    }
+
+    .instructor__content h3{
+        @apply text-[1.5rem] font-[600] text-dark pt-[.5rem]
+    }
+
+    .instructor__content p{
+        @apply text-[1.1rem] text-grey
+    }
+
+    .instructor__social{
+        @apply relative flex justify-center
+    }
+
+    .instructor__social:before{
+        @apply absolute content-[''] bg-[#ddd] top-0 h-[1px] w-[25%] m-auto transition-all duration-300
+    }
+
+    .instructor__social ul{
+        @apply flex pt-[1.5rem]
+    }
+
+    .instructor__social ul li:nth-child(2){
+        @apply mx-[.5rem]
+    }
+
+    .instructor__social ul li:first-child a{
+        @apply px-[.8rem]
+    }
+
+    .instructor__social ul li a{
+        @apply bg-lgreen px-[.7rem] py-[.5rem] text-primary text-[1rem] rounded-[.2rem]
+    }
+
+    .instructor__social ul li a:hover{
+        @apply text-light bg-primary transition ease-in-out duration-300
+    }
+
+
+
+    /** ---------- PROGRAM BANNER ---------- */
+
+    .program{
+        @apply my-[2rem]
+    }
+
+    .program__title{
+        @apply flex flex-col items-center text-center font-[700] text-[1.6rem] text-primary pb-[3rem] lg:text-[1rem]
+    }
+
+    .program__title h4{
+        @apply text-dark px-[3rem] lg:text-[3rem] lg:w-[50rem]
+    }
+
+    .program__wrapper{
+        @apply lg:grid lg:grid-cols-4 lg:gap-[2rem]
+    }
+
+    .program__card{
+        @apply bg-light border-[2px] border-lgreen rounded-[.5rem] shadow-[0px_0px_30px_0px_rgba(0,0,0,.03)] py-[1.3rem] transition-all duration-500
+    }
+
+    .program__card:not(:first-child){
+        @apply mt-[1.5rem] lg:mt-0
+    }
+
+    .program__card:hover{
+        @apply border-light shadow-[0px_0px_50px_0px_rgba(0,0,0,.06)] transition-all duration-500
+    }
+
+    .program__content{
+        @apply flex flex-col items-center py-[3rem]
+    }
+
+    .program__content a{
+        @apply text-[1.5rem] text-dark hover:text-primary font-[600] mt-[1.5rem] transition ease-in-out duration-300
+    }
+
+    .program__content p{
+        @apply text-[1.1rem] text-grey
+    }
+
+
+
+    /** ---------- PROGRAM BANNER ---------- */
+
+    .news{
+        @apply relative pb-[5rem]
+    }
+
+    .news__title{
+        @apply font-[700] text-[1.6rem] text-primary pb-[2rem] lg:text-[1rem]
+    }
+
+    .news__title h4{
+        @apply text-dark w-[25rem] lg:text-[3rem] lg:w-[50rem]
+    }
+
+    .news__wrapper{
+        @apply lg:flex lg:gap-x-[2rem]
+    }
+
+    .news__card{
+        @apply overflow-hidden bg-light shadow-[0px_5px_4px_0px_rgba(0,0,0,.05)] mb-[1rem] px-[.5rem] min-h-[10rem] lg:px-0
+    }
+
+    .news__card:hover .news__subtitle{
+        @apply transition ease-in duration-300 
+    }
+
+    .news__card:hover .news__subtitle span{
+        @apply top-0 left-0 w-full h-full transition-all duration-500
+    }
+
+    .news__card:hover .news__subtitle p{
+        @apply left-[2%] p-[.5rem] text-[1.1rem] transition-all duration-500
+    }
+
+    .news__card:hover .news__img img{
+        @apply scale-[1.1] transition ease-in-out duration-500
+    }
+
+    .news__img{
+        @apply relative
+    }
+
+    .news__subtitle{
+        @apply transition ease-in duration-300
+    }
+
+    .news__subtitle span{
+        @apply absolute top-[50%] left-[50%] bg-black bg-opacity-50 w-0 h-0 transition-all duration-500
+    }
+
+    .news__subtitle p{
+        @apply absolute top-[2%] left-[10%] bg-primary text-light rounded-[.2rem] font-[600] m-[1rem] text-[0] transition-all duration-500
+    }
+
+    .news__img{
+        @apply overflow-hidden 
+    }
+
+    .news__img img{
+        @apply w-full lg:w-full transition ease-in-out duration-500
+    }
+
+    .news__content{
+        @apply px-[1rem] py-[2rem]
+    }
+
+    .news__content a{
+        @apply text-[1.3rem] text-dark font-[600] hover:text-primary transition ease-in-out duration-300 lg:w-[10rem] lg:text-[1.6rem] lg:pr-[3rem]
+    }
+
+    .news__content ul{
+        @apply flex items-center mt-[1rem] mb-[2rem]
+    }
+
+    .news__content ul li{
+        @apply text-[1.1rem] font-[500] mr-[1rem] text-primary
+    }
+
+    .news__content ul li i{
+        @apply mr-[.5rem]
+    }
+
+    .news__content ul li a{
+        @apply text-[1.1rem] text-primary font-[500]
+    }
+
+    .news__content .shallow-white{
+        @apply text-[1.1rem] font-[500] hover:text-light w-fit lg:pr-[1.5rem]
+    }
+
+
+
+    /** ---------- TESTIMONY BANNER ---------- */
+
+    .testimony{
+        @apply relative bg-[#0EB58208] py-[5rem]
+    }
+
+    .testimony__title{
+        @apply flex flex-col items-center text-center font-[700] text-[1.6rem] text-primary pt-[3rem] lg:text-[1rem] lg:items-start lg:text-left
+    }
+
+    .testimony__title h4{
+        @apply text-dark px-[2.5rem] lg:text-[3rem] lg:w-[50rem] lg:px-0
+    }
+
+    .testimony__wrapper{
+        @apply lg:grid lg:grid-cols-2 lg:gap-x-[3rem] lg:py-[2.5rem]
+    }
+
+    .testimony__item{
+        @apply p-[1rem]
+    }
+
+    .testimony__item ul{
+        @apply flex text-primary text-[1.1rem]
+    }
+
+    .testimony__item ul li{
+        @apply mr-[.3rem]
+    }
+
+    .testimony__item p{
+        @apply text-[1.3rem] text-grey my-[1rem] lg:text-[1.8rem]
+    }
+
+    .testimony__name{
+        @apply flex items-center
+    }
+
+    .testimony__name img{
+        @apply w-[3rem] mr-[1rem] lg:w-[5rem]
+    }
+
+    .testimony__name-text h3{
+        @apply text-[1.1rem] font-[600] text-dark lg:text-[1.3rem]
+    }
+
+    .testimony__name-text p{
+        @apply text-[1rem] font-[600] text-primary my-0 lg:text-[1.2rem]
+    }
+
+
+
+    /** ---------- APPLY BANNER ---------- */
+
+    .apply{
+        @apply bg-[#0EB58208] pb-[3rem]
+    }
+
+    .apply__title{
+        @apply flex flex-col items-center text-center font-[700] text-[1.6rem] text-primary mb-[2rem] lg:text-[1rem]
+    }
+
+    .apply__title h4{
+        @apply text-dark px-[2.5rem] lg:text-[3rem] lg:w-[50rem]
+    }
+
+    .apply__wrapper{
+        @apply flex flex-col gap-y-[3.5rem] lg:grid lg:grid-cols-2 lg:gap-x-[2rem]
+    }
+
+    .apply__card{
+        @apply bg-light shadow-[0px_5px_20px_0px_rgba(0,0,0,.1)] px-[1.5rem] pt-[3rem] border-[2px] border-lgreen min-h-[30rem] lg:min-h-[20rem]
+    }
+
+    .apply__card:last-child{
+        @apply bg-light shadow-[0px_5px_20px_0px_rgba(0,0,0,.1)] px-[1.5rem] pt-[3rem] border-[2px] border-lgreen min-h-[27rem] lg:min-h-[20rem]
+    }
+
+    .apply__text{
+        @apply mt-[1rem] mb-[1.5rem]
+    }
+
+    .apply__text p{
+        @apply text-primary font-[700] text-[1.1rem]
+    }
+
+    .apply__text a{
+        @apply text-dark font-[700] text-[1.7rem] hover:text-primary transition ease-in-out duration-300
+    }
+
+    .apply__content{
+        @apply lg:flex lg:gap-x-[5rem] 
+    }
+
+    .apply__container{
+        @apply lg:min-h-[15rem]
+    }
+
+    .apply__content ul{
+        @apply relative
+    }
+
+    .apply__content ul li:first-child{
+        @apply bg-primary w-fit rounded-full py-[.5rem] px-[.8rem] text-light
+    }
+
+    .apply__content ul li:last-child{
+        @apply absolute top-0 bg-primary w-[5rem] h-[2.5rem] opacity-0 py-[.5rem] rounded-[.3rem]
+    }
+
+    .apply__content ul li:last-child a{
+        @apply  text-light opacity-0 hidden text-start 
+    }
+
+    .apply__card:hover .apply__content ul li:first-child{
+        @apply py-[.2rem] px-[.1rem] transition-all duration-500
+    }
+
+    .apply__card:hover .apply__content ul li:last-child{
+        @apply w-[10rem] transition-all duration-500 opacity-100
+    }
+
+    .apply__card:hover .apply__content ul li:last-child a{
+        @apply text-center block transition-all duration-500 opacity-100
+    }
+
+
+
+    /*-----------------------newsletter----------------------*/
+.news{
+    @apply translate-y-[10rem] lg:relative
+}
+.news__letter{
+    @apply bg-primary m-[2rem] rounded h-[20rem]
+    lg:w-[78rem] lg:mx-auto lg:h-[15rem] lg:items-center lg:flex
+}
+.news__titles h2{
+    @apply text-white text-[27px] font-semibold pt-[1rem]
+    lg:text-[40px]
+}
+.news__titles p{
+    @apply text-white pb-[2rem] text-[1.2rem]
+}
+.mc4wp-form-fields input{
+    @apply outline-none w-[23rem] rounded pl-[2rem] py-[1rem] text-[1rem]
+    
+}
+.witr_shortcode_form button{
+    @apply bg-textcolor text-white w-[23rem] py-[1rem] rounded hover:bg-dark duration-500
+    lg:w-[10rem] 
+}
+.witr_shortcode_form form{
+    @apply pb-[1rem] lg:pb-0
+}
+.shortcode_content{
+    @apply lg:flex  lg:items-center lg:mx-auto lg:gap-[15rem]
+}
+.witr_shortcode_form{
+    @apply lg:flex
+}
+
+
+/*-----------------------middle-footer----------------------*/
+.footer__middle {
+    @apply bg-dark top-[-8rem]
+}
+.description__area img{
+    @apply mx-auto pt-[12rem] pb-[2rem]
+    lg:pt-[1.8rem] lg:pb-[1rem]
+}
+.description__area p{
+    @apply pb-[1rem] text-[1.2rem] 
+    lg:w-[15rem] lg:mx-auto
+}
+.middle__row{
+    @apply text-center text-white
+    lg:grid lg:grid-cols-4 lg:pt-[10rem]
+}
+.social-icons i{
+    @apply duration-500 border-[1px] border-white hover:border-primary h-[2.2rem] w-[2.2rem] items-center leading-[36px] text-center rounded hover:bg-primary transition-all
+}
+.nav_menu1 h2{
+    @apply text-[1.5rem] font-bold pt-[2rem] pb-[1.5rem]
+}
+.menu__container ul li a{
+    @apply text-[1.2rem]
+}
+.menu__container ul li {
+    @apply duration-700 pb-[1rem] hover:text-primary transition-all
+}
+.custom__html h2{
+    @apply text-[1.5rem] pt-[1.5rem] pb-[1rem]
+    lg:pt-[2rem]
+}
+.witr_sub_table{
+    @apply flex justify-between text-[1.2rem] pb-[8px] border-b-[1px] mb-[8px]
+}
+
+/*-----------------------footer----------------------*/
+.footer-bottom{
+    @apply relative bg-dark text-white pt-[3rem]
+}
+.copy-right-text{
+    @apply flex justify-center pb-[1rem] pt-[1rem] text-[1rem]
+}
+.text-right{
+    @apply flex justify-center  gap-[1rem] 
+    
+}
+.text-right li{
+    @apply duration-700  hover:text-primary transition-all text-[1rem]
+}
+.row{
+    @apply border-t-[1px]
+lg:flex lg:justify-between lg:items-center
+}
+}
